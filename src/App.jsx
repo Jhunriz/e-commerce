@@ -6,25 +6,15 @@ import ReactDOM from "react-dom/client";
 import Header from "./layout/Header";
 import Content from "./layout/Content";
 import Footer from "./layout/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Structure from "./layout/Structure";
+import Routing from "./routes/Routing";
 
 function App() {
-  const name = {
-    name: "Jhunriz",
-    age: "23",
-  };
-
-  const [count, setCount] = useState(0);
-  const [calculation, setCalculation] = useState(0);
-
-  useEffect(() => {
-    setCalculation(() => count * 1);
-  }, [count]);
-
   return (
     <>
-      <Header calculation={calculation} setCount={setCount} count={count} />
-      <Content calculation={calculation} setCount={setCount} />
-      <Footer />
+      <Routing />
     </>
   );
 }
